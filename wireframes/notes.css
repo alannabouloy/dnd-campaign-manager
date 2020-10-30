@@ -21,16 +21,17 @@ header p {
   margin-right: 5px;;
 }
 
-.campaign-list {
+.notes-list {
     display: flex;
     flex-direction: column;
+    
 }
 
-.campaign-list li {
+.notes-list li {
     list-style: none;
 }
 
-.campaign {
+.note {
     background-color: gray;
     flex: 1;
     width: 200px;
