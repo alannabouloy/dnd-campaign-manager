@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+}
+
+.dash {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: gray;
+    margin: -10px;
+    color: white;
+}
+
+.dash h1 {
+    font-size: 30px;
+    margin: 10px;
+    margin-left: 25px;
+}
+
+.dash p {
+  font-size: 14px;
+  margin-top: 25px;
+  margin-right: 5px;;
+}

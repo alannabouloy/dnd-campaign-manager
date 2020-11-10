@@ -1,0 +1,10 @@
+.campaign {
+    background-color: gray;
+    flex: 1;
+    width: 75%;
+    margin: auto;
+    margin-top: 10px;
+    padding: 10px;
+    color: white;
+    font-size: 10px;
+}
