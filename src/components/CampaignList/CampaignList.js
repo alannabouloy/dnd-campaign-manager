@@ -10,6 +10,7 @@ export default function CampaignList(props){
             DM: 'Matthew Mercer',
             playingSince: '03-12-15',
             private: false,
+            id: 1,
         },
         {
             campaignName: 'Mighty Nein',
@@ -17,6 +18,7 @@ export default function CampaignList(props){
             DM: 'Matthew Mercer',
             playingSince: '01-14-18',
             private: false,
+            id: 2,
         },
         {
             campaignName: 'Merry Misfits',
@@ -24,18 +26,19 @@ export default function CampaignList(props){
             DM: 'GalarzaCat',
             playingSince: '07-24-20',
             private: true,
+            id: 3,
         }
     ]
 
-    list = list.map((camp, i) => {
+    list = list.map(camp => {
         return (
-            <CampaignTab campaign={camp} key={i}/>
+            <CampaignTab campaign={camp} key={camp.id}/>
         )
     })
     
     return (
         <div className='campaign-list'>
-            <ul class='campaigns'>
+            <ul className='campaigns'>
                 {list}
             </ul>
         </div>
