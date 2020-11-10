@@ -6,12 +6,13 @@ import Dashboard from '../../routes/Dashboard/Dashboard';
 import CampaignFormPage from '../../routes/CampaignFormPage/CampaignFormPage';
 import CampaignPage from '../../routes/CampaignPage/CampaignPage'
 import NotePage from '../../routes/NotePage/NotePage';
+import NoteFormPage from '../../routes/NoteFormPage/NoteFormPage';
 
 
 function App() {
   return (
     <div className="App">
-      <NotePage/>
+      <NoteFormPage/>
     </div>
   );
 }
