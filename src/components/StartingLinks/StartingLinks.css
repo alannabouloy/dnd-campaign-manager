@@ -1,0 +1,15 @@
+.starting-links {
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 50px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+.starting-links h2 {
+    color: white;
+    font-size: 20px;
+}

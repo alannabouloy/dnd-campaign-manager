@@ -1,9 +1,10 @@
 import './App.css';
+import LandingPage from '../../routes/LandingPage/LandingPage';
 
 function App() {
   return (
     <div className="App">
-      {/*content goes here */}
+      <LandingPage/>
     </div>
   );
 }
