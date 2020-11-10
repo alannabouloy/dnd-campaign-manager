@@ -7,7 +7,7 @@ import './LoginPage.css'
 export default class LoginPage extends Component {
     render(){
         return (
-            <div>
+            <div className='login-page'>
                 <Header className = 'login'/>
                 <div className='form'>
                     <h2>Log In</h2>
