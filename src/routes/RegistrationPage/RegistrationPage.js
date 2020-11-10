@@ -8,7 +8,7 @@ export default class RegistrationPage extends Component {
     render(){
         return (
             <div className='registration-page'>
-                <Header className='register'/>
+                <Header className='register' heading='DnD Campaign Manager' subheading='a place to keep track of all of your adventures'/>
                 <div className='form'>
                     <h2>Create a New Account</h2>
                     <RegisterForm/>
