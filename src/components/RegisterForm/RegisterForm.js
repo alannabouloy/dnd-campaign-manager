@@ -1,7 +1,6 @@
 import React from 'react'
 import TextFormField from '../TextFormField/TextFormField'
 import SubmitButton from '../SubmitButton/SubmitButton'
-import StartingButton from '../StartingButton/StartingButton'
 import './RegisterForm.css'
 
 export default function RegisterForm(props){
@@ -14,7 +13,6 @@ export default function RegisterForm(props){
                 <TextFormField formId='lastname' label='Last Name: ' placeholder='Lionett'/>
                 <TextFormField formId='email' label='Email: ' placeholder='blionett@cobaltsoul.com'/>
                 <SubmitButton buttonText='Start My Account'/>
-                <StartingButton className='returning' buttonText='I have an account'/>
             </form>
         </div>
     )
