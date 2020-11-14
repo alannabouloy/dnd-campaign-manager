@@ -13,25 +13,21 @@ export default class Dashboard extends Component{
         notes: [],
     }
     componentDidMount(){
-        Promise.all([
-            fetch(`${config.API_ENDPOINT}/users/1/campaigns`),
-            fetch(`${config.API_ENDPOINT}/campaigns/2/notes`)
-        ])
-            .then(([campsRes, notesRes]) => {
+        
+        fetch(`${config.API_ENDPOINT}/users/1/campaigns`)
+            .then(campsRes => {
                 if(!campsRes.ok)
                     return campsRes.json().then(e => Promise.reject(e));
-                if(!notesRes.ok)
-                    return notesRes.json().then(e => Promise.reject(e));
-                return Promise.all([campsRes.json(), notesRes.json()]);
+                return campsRes.json();
             })
-            .then(([campaigns, notes]) => {
-                this.setState({campaigns, notes});
+            .then(campaigns => {
+                this.setState({campaigns});
             })
             .catch(error => {
                 console.log({error});
             })
     }
-
+    
     handleAddButton = e => {
         this.props.onClick()
     }
@@ -39,13 +35,14 @@ export default class Dashboard extends Component{
         const value = {
             campaigns: this.state.campaigns,
             notes: this.state.notes,
+            getCampaignNotes: this.getCampaignNotes,
         }
 
         return (
             <ApiContext.Provider value= {value}>
                 <div className='dashboard'>
                     <Header className='dash' heading='My Campaigns' subheading='myusername'/>
-                    <CampaignList/>
+                    <CampaignList notes = {this.state.notes} />
                     <AddButton buttonText='Add Campaign' onClick = {this.handleAddButton}/>
                 </div>
             </ApiContext.Provider>

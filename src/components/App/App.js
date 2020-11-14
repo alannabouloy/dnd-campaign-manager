@@ -62,8 +62,9 @@ class App extends Component {
             }}
           />
           <Route exact path = '/campaigns/:campaign_id'
-             render = {({history}) => {
+             render = {({history}, props) => {
                return <CampaignPage
+                location = {history.location}
                 onClick = {() => history.push(`/notes/${value.username}/create-note`)}
               />
              }}

@@ -3,7 +3,13 @@ import './NoteTab.css'
 import {Link} from 'react-router-dom'
 
 export default function NoteTab(props){
-    const note = props.note
+    const {id, note_title, modified, admin } = props.note
+    const note = {
+        id,
+        noteTitle: note_title,
+        modified,
+        author: admin
+    }
 
     return (
         <li>
