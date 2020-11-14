@@ -7,13 +7,16 @@ import './CampaignPage.css'
 
 export default class CampaignPage extends Component {
 
+    handleAddButton = e => {
+        this.props.onClick()
+    }
     
     render(){
         return (
             <div className='camp-dashboard'>
                 <Header className='dash' heading='Mighty Nein' subheading='myusername'/>
                 <NoteList/>
-                <AddButton buttonText='Add Note'/>
+                <AddButton buttonText='Add Note' onClick = {this.handleAddButton}/>
             </div>
         )
     }

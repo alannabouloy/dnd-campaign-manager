@@ -11,7 +11,7 @@ export default class NoteFormPage extends Component {
                 <Header className='note-form-head' heading='Mighty Nein' subheading='myusername'/>
                 <SectionTitle className='add-note-heading' text='Add a New Note'/>
                 <div className='form'>
-                    <NoteForm/>
+                    <NoteForm onClickSubmit = {this.props.onClickSubmit}/>
                 </div>
 
             </div>

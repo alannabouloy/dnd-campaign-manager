@@ -8,3 +8,11 @@
     color: white;
     font-size: 10px;
 }
+
+li a {
+    text-decoration: none;
+}
+
+.note-tab:hover {
+    background-color: darkgray;
+}

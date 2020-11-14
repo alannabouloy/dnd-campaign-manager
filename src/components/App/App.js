@@ -54,11 +54,35 @@ class App extends Component {
               />
             }}
           />
-          <Route exact path = '/:user_name/dash' component = {Dashboard}/>
-          <Route exact path = '/campaigns/:campaign_id' component = {CampaignPage}/>
-          <Route exact path = '/campaigns/create-campaign' component={CampaignFormPage}/>
+          <Route exact path = '/:user_name/dash' 
+            render = {({history}) => {
+              return <Dashboard
+                onClick = {() => history.push(`/campaigns/${value.username}/create-campaign`)}
+              />
+            }}
+          />
+          <Route exact path = '/campaigns/:campaign_id'
+             render = {({history}) => {
+               return <CampaignPage
+                onClick = {() => history.push(`/notes/${value.username}/create-note`)}
+              />
+             }}
+            />
+          <Route exact path = '/campaigns/:user_name/create-campaign'
+             render = {({history}) => {
+               return <CampaignFormPage
+                onClickSubmit = {() => history.goBack()}
+              />
+            }}
+          />
           <Route exact path = '/notes/:note_id' component = {NotePage}/>
-          <Route exact path = '/notes/create-note' component = {NoteFormPage}/>
+          <Route exact path = '/notes/:user_name/create-note'
+           render = {({history}) => {
+             return <NoteFormPage
+              onClickSubmit = {() => history.goBack()}
+              />
+           }}
+          />
         </div>
       </UserContext.Provider>
       
