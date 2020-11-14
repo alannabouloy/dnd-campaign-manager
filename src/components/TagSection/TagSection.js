@@ -1,5 +1,6 @@
 import React from 'react'
 import Tag from '../Tag/Tag'
+import './TagSection.css'
 
 export default function TagSection(props){
     let list = [

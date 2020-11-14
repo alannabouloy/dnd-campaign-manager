@@ -6,6 +6,7 @@ import ContentBlock from '../../components/ContentBlock/ContentBlock'
 import TagSection from '../../components/TagSection/TagSection'
 import StartingButton from '../../components/StartingButton/StartingButton'
 import AddButton from '../../components/AddButton/AddButton'
+import './NotePage.css'
 
 export default class NotePage extends Component {
 

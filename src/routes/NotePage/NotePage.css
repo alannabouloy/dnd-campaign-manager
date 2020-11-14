@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+
+.note-head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: gray;
+    margin: -10px;
+    color: white;
+}
+
+.note-head h1 {
+    font-size: 25px;
+    margin: 15px 5px 15px 25px;
+}
+
+.note-head p {
+    font-size: 14px;
+    margin-top: 25px;
+    margin-right: 5px;;
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}

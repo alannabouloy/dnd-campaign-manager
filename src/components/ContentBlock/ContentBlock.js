@@ -1,6 +1,7 @@
 import React from 'react'
 import Content from '../Content/Content'
 import ModifiedTag from '../ModifiedTag/ModifiedTag'
+import './ContentBlock.css'
 
 export default function ContentBlock(props){
     const note = {

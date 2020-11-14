@@ -1,0 +1,15 @@
+.tag-section {
+    display: flex;
+    background-color: lightgray;
+    justify-content: center;
+    border-radius: 10px;
+    margin: 50px; 
+
+}
+.tag-section h2 {
+    font-size: 15px;
+    text-align: left;
+    margin: auto;
+    margin-left: -60px;
+    margin-right: 10px;  
+}

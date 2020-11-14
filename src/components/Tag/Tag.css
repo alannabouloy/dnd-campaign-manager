@@ -1,0 +1,21 @@
+.blue {
+    background-color: blue;
+}
+
+.red {
+    background-color: red;
+}
+
+.tag {
+    color: white;
+    font-size: 12px;
+    margin: 10px 5px 10px 5px;
+    padding: 1px 5px 1px 5px;
+    border-radius: 15px;
+    height: 50%;
+    
+}
+
+p {
+    margin: 2px;
+}
