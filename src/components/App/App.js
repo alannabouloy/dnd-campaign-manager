@@ -10,15 +10,17 @@ import NoteFormPage from '../../routes/NoteFormPage/NoteFormPage';
 import { Route } from 'react-router-dom';
 import { Component } from 'react';
 import UserContext from '../../context/UserContext'
+import ApiService from '../../services/api-service';
 
 
 class App extends Component {
   
   state = {
         user: {
-          username: 'mattmercer',
-          password: '',
-          userCredentials: ''
+          username: '',
+          first_name: '',
+          last_name: '',
+          email: ''
         }
   }
 
@@ -26,9 +28,12 @@ class App extends Component {
     console.log('user added')
   }
 
-  handleLogin = (userCredentials) => {
-    this.setState({userCredentials : userCredentials});
-    console.log(this.state.user.userCredentials)
+  handleLogin = (username) => {
+    return ApiService.getUser(username)
+        .then(user => {
+          this.setState({user})
+          console.log(this.state.user)
+        })
   }
 
   render(){

@@ -14,8 +14,8 @@ const ApiService = {
                 :res.json()
                 )
     },
-    getUser(userId){
-        return fetch(`${config.API_ENDPOINT}/users/${userId}`, {
+    getUser(username){
+        return fetch(`${config.API_ENDPOINT}/users/${username}`, {
             headers: {
                 'authorization': `basic:${TokenService.getAuthToken()}`,
             },

@@ -7,19 +7,21 @@ import TokenService from '../../services/token-service'
 
 export default class LoginForm extends Component{
     state = {
-        username: '',
-        userCredentials: ''
+        username: 'mattmercer',
+        password: 'pumatrocks',
     }
 
     static contextType = UserContext;
 
     handleFormSubmit = e => {
         e.preventDefault()
-        const { username, password} = e.target
+        const {username, password} = this.state
         const userCredentials = TokenService.makeBasicAuthToken(username, password)
-        console.log(userCredentials)
         TokenService.saveAuthToken(userCredentials)
-        this.props.onClickSubmit()
+        this.context.login(username)
+            .then(() => {
+                this.props.onClickSubmit()
+            })
     }
 
     render(){
