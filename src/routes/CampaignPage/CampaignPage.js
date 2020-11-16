@@ -15,7 +15,6 @@ export default class CampaignPage extends Component {
     static contextType = ApiContext
 
     getCampaignNotes = campId => {
-        console.log('getting campaign notes')
         fetch(`${config.API_ENDPOINT}/campaigns/${campId}/notes`)
             .then(notesRes => {
                 if(!notesRes.ok){
@@ -25,7 +24,6 @@ export default class CampaignPage extends Component {
             })
             .then(notes => {
                 this.setState({notes});
-                console.log(this.state.notes)
             })
         
     }
@@ -43,12 +41,18 @@ export default class CampaignPage extends Component {
     }
     
     render(){
+        const values = {
+            notes: this.state.notes
+        }
+
         return (
-            <div className='camp-dashboard'>
-                <Header className='dash' heading='Mighty Nein' subheading='myusername'/>
-                <NoteList notes = {this.state.notes} />
-                <AddButton buttonText='Add Note' onClick = {this.handleAddButton}/>
-            </div>
+            <ApiContext.Provider values = {values}>
+                <div className='camp-dashboard'>
+                    <Header className='dash' heading='Mighty Nein' subheading='myusername'/>
+                    <NoteList notes = {this.state.notes} />
+                    <AddButton buttonText='Add Note' onClick = {this.handleAddButton}/>
+                </div>
+            </ApiContext.Provider>
         )
     }
 }

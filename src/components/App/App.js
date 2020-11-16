@@ -17,6 +17,8 @@ class App extends Component {
   state = {
         user: {
           username: 'mattmercer',
+          password: '',
+          userCredentials: ''
         }
   }
 
@@ -24,14 +26,16 @@ class App extends Component {
     console.log('user added')
   }
 
-  handleLogin = user => {
-    console.log('user logged in')
+  handleLogin = (userCredentials) => {
+    this.setState({userCredentials : userCredentials});
+    console.log(this.state.user.userCredentials)
   }
 
   render(){
 
     const value = {
       username: this.state.user.username,
+      userCredentials: this.state.user.userCredentials,
       addUser: this.handleAddUser,
       login: this.handleLogin
     } 

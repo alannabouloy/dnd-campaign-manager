@@ -9,6 +9,15 @@ import AddButton from '../../components/AddButton/AddButton'
 import './NotePage.css'
 
 export default class NotePage extends Component {
+    state = {
+        note: null,
+        campaign: null,
+    }
+
+    componentDidMount() {
+       const path = this.props.match.params
+       console.log(path) 
+    }
 
     render(){
         return (
