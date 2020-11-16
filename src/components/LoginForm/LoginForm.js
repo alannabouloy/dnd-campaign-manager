@@ -3,7 +3,7 @@ import './LoginForm.css';
 import TextFormField from '../TextFormField/TextFormField';
 import SubmitButton from '../SubmitButton/SubmitButton';
 import UserContext from '../../context/UserContext';
-import TokenService from '../../services/TokenService'
+import TokenService from '../../services/token-service'
 
 export default class LoginForm extends Component{
     state = {
