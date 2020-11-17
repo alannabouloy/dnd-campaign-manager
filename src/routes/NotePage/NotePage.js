@@ -20,13 +20,7 @@ export default class NotePage extends Component {
     componentDidMount() {
        const noteId = parseInt(this.props.match.params.note_id)
        const notes = this.context.notes
-       let note = {}
-       for(let i = 0; i < notes.length; i++){
-           if(notes[i].id === noteId){
-               note = notes[i]
-               break
-           }
-       }
+       const note = notes.find(note => note.id === noteId)
 
        this.setState({note})
        ApiService.getCampaign(note.campaign)
@@ -38,7 +32,6 @@ export default class NotePage extends Component {
     render(){
         const note = this.state && this.state.note
         const campaign = this.state && this.state.campaign
-        console.log(note)
         return (
             <div className='note-page'>
                 <Header className='note-head' heading={note.note_title} subheading='myusername'/>
