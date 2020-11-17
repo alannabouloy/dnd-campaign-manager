@@ -14,6 +14,22 @@ const ApiService = {
                 :res.json()
                 )
     },
+
+    postUser(newUser){
+        return fetch(`${config.API_ENDPOINT}/users`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            }, 
+            body: JSON.stringify(newUser)
+        })
+        .then(res => 
+            (!res.ok)
+                ? res.json().then(e => Promise.reject(e))
+                : res.json()
+                )
+    },
+
     getUser(username){
         return fetch(`${config.API_ENDPOINT}/users/${username}`, {
             headers: {
@@ -26,8 +42,9 @@ const ApiService = {
                     :res.json()
                     )
     },
-    getCampaignsByUser(username){
-        return fetch(`${config.API_ENDPOINT}/user_campaigns/${username}`, {
+
+    getCampaignsByUser(){
+        return fetch(`${config.API_ENDPOINT}/user_campaigns`, {
             headers: {
                 'authorization': `basic${TokenService.getAuthToken()}`,
             },
@@ -38,6 +55,7 @@ const ApiService = {
                     : res.json()
                     )
     },
+
     getCampaign(campId){
         return fetch(`${config.API_ENDPOINT}/user_campaigns/${campId}`, {
             headers: {
@@ -51,6 +69,7 @@ const ApiService = {
                     )
 
     },
+
     getCampaignNotes(campId){
         return fetch(`${config.API_ENDPOINT}/user_notes/${campId}`, {
             headers: {
@@ -63,6 +82,7 @@ const ApiService = {
                     : res.json()
                     )   
     },
+
     getNote(campId, noteId){
         return fetch(`${config.API_ENDPOINT}/user_notes/${campId}/${noteId}`, {
             headers: {
@@ -76,6 +96,7 @@ const ApiService = {
                     )
 
     },
+
     postNote(campId, newNote){
         return fetch(`${config.API_ENDPOINT}/user_notes/${campId}`, {
             method: 'POST',
@@ -92,6 +113,7 @@ const ApiService = {
                     )
 
     },
+
     postCampaign(newCampaign){
         return fetch(`${config.API_ENDPOINT}/user_campaigns`, {
             method: 'POST',
