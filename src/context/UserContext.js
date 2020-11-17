@@ -1,8 +1,10 @@
 import React from 'react'
 
 export default React.createContext({
-    username: '',
-    userCredentials: '',
+    user: {},
+    campaigns : [],
+    notes: [],
     addUser: () => {},
     login: () => {},
+    campaignClick: () => {},
 })

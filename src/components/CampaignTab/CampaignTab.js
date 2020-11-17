@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
+import UserContext from '../../context/UserContext'
 import './CampaignTab.css'
 
 export default class CampaignTab extends Component {
-
+    static contextType = UserContext
 
     render(){
         const {id, campaign_name, players, playingSince} = this.props.campaign
@@ -14,10 +15,8 @@ export default class CampaignTab extends Component {
             playingSince
         }
  
-
-
         return(
-            <li>
+            <li onClick = {e => this.context.campaignClick(campaign.id)}>
                 <Link to={`/campaigns/${campaign.id}`}>
                 <div className='campaign'>
                     <h2>{campaign.campaignName}</h2>

@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
-import ApiContext from '../../context/ApiContext'
+import UserContext from '../../context/UserContext'
 import NoteTab from '../NoteTab/NoteTab'
 import './NoteList.css'
 
 export default class NoteList extends Component{
-    static contextType = ApiContext
+    static contextType = UserContext
 
     render(){
-        let list = this.props.notes
+        let list = this.context.notes
 
-        list = list.map(note => {
+        list = list && list.map(note => {
             return (
                 <NoteTab note={note} key={note.id}/>
             )

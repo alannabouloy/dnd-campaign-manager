@@ -21,7 +21,9 @@ class App extends Component {
           first_name: '',
           last_name: '',
           email: ''
-        }
+        },
+        campaigns: [],
+        notes: [],
   }
 
   handleAddUser = newUser => {
@@ -29,20 +31,40 @@ class App extends Component {
   }
 
   handleLogin = (username) => {
+    this.setState({username})
     return ApiService.getUser(username)
         .then(user => {
           this.setState({user})
-          console.log(this.state.user)
+      
         })
   }
+  renderCampaigns = username => {
+    ApiService.getCampaignsByUser(username)
+            .then(campaigns => {
+                this.setState({campaigns});
+            })
+            .catch(error => {
+                console.log({error});
+            })
+  }
+  handleCampaignClick = id => {
+    ApiService.getCampaignNotes(id)
+        .then(notes => {
+            console.log('got notes from api', notes)
+            this.setState({notes})
+        })
+}
 
   render(){
 
     const value = {
-      username: this.state.user.username,
-      userCredentials: this.state.user.userCredentials,
+      user: this.state.user,
+      campaigns: this.state.campaigns,
+      notes: this.state.notes,
       addUser: this.handleAddUser,
-      login: this.handleLogin
+      login: this.handleLogin,
+      campaignClick: this.handleCampaignClick,
+      renderCampaigns: this.renderCampaigns
     } 
 
     return (
@@ -71,7 +93,7 @@ class App extends Component {
             }}
           />
           <Route exact path = '/campaigns/:campaign_id'
-             render = {({history}, props) => {
+             render = {({history}) => {
                return <CampaignPage
                 location = {history.location}
                 onClick = {() => history.push(`/notes/${value.username}/create-note`)}

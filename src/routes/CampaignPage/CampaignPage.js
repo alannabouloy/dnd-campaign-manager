@@ -5,54 +5,23 @@ import NoteList from '../../components/NoteList/NoteList'
 import Header from '../../components/Header/Header'
 import './CampaignPage.css'
 import ApiContext from '../../context/ApiContext'
-import config from '../../config'
 
 export default class CampaignPage extends Component {
-    state = {
-        notes: [],
-        campaign: null
-    }
     static contextType = ApiContext
-
-    getCampaignNotes = campId => {
-        fetch(`${config.API_ENDPOINT}/campaigns/${campId}/notes`)
-            .then(notesRes => {
-                if(!notesRes.ok){
-                      return notesRes.json().then(e => Promise.reject(e))
-                }
-                return notesRes.json()
-            })
-            .then(notes => {
-                this.setState({notes});
-            })
-        
-    }
-
-    componentDidMount(){
-        const path = this.props.location.pathname.split('/')
-        const campaign = path[2]
-        this.setState({campaign})
-        
-        this.getCampaignNotes(campaign)
-    }
 
     handleAddButton = e => {
         this.props.onClick()
     }
     
     render(){
-        const values = {
-            notes: this.state.notes
-        }
-
+        const notes = this.context.notes
         return (
-            <ApiContext.Provider values = {values}>
+
                 <div className='camp-dashboard'>
                     <Header className='dash' heading='Mighty Nein' subheading='myusername'/>
-                    <NoteList notes = {this.state.notes} />
+                    <NoteList notes = {notes} />
                     <AddButton buttonText='Add Note' onClick = {this.handleAddButton}/>
                 </div>
-            </ApiContext.Provider>
         )
     }
 }

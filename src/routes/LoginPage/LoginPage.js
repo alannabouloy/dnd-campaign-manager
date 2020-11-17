@@ -11,7 +11,7 @@ export default class LoginPage extends Component {
                 <Header className = 'login' heading='DnD Campaign Manager' subheading='a place to keep track of all of your adventures'/>
                 <div className='form'>
                     <h2>Log In</h2>
-                    <LoginForm onClickSubmit = {this.props.onClickSubmit}/>
+                    <LoginForm onClickSubmit = {this.props.onClickSubmit} />
                 </div>
             </div>
             

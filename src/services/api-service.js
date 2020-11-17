@@ -26,8 +26,8 @@ const ApiService = {
                     :res.json()
                     )
     },
-    getCampaignsByUser(userId){
-        return fetch(`${config.API_ENDPOINT}/users/${userId}/campaigns`, {
+    getCampaignsByUser(username){
+        return fetch(`${config.API_ENDPOINT}/user_campaigns/${username}`, {
             headers: {
                 'authorization': `basic${TokenService.getAuthToken()}`,
             },
@@ -38,8 +38,8 @@ const ApiService = {
                     : res.json()
                     )
     },
-    getCampaign(userId, campId){
-        return fetch(`${config.API_ENDPOINT}/users/${userId}/campaigns/${campId}`, {
+    getCampaign(campId){
+        return fetch(`${config.API_ENDPOINT}/user_campaigns/${campId}`, {
             headers: {
                 'authorization': `basic${TokenService.getAuthToken()}`,
             },
@@ -51,8 +51,8 @@ const ApiService = {
                     )
 
     },
-    getCampaignNotes(userId, campId){
-        return fetch(`${config.API_ENDPOINT}/campaigns/${campId}/notes`, {
+    getCampaignNotes(campId){
+        return fetch(`${config.API_ENDPOINT}/user_notes/${campId}`, {
             headers: {
                 'authorization': `basic${TokenService.getAuthToken()}`,
             },
@@ -64,7 +64,7 @@ const ApiService = {
                     )   
     },
     getNote(campId, noteId){
-        return fetch(`${config.API_ENDPOINT}/campaigns/${campId}/notes/${noteId}`, {
+        return fetch(`${config.API_ENDPOINT}/user_notes/${campId}/${noteId}`, {
             headers: {
                 'authorization': `basic${TokenService.getAuthToken()}`,
             },
@@ -77,7 +77,7 @@ const ApiService = {
 
     },
     postNote(campId, newNote){
-        return fetch(`${config.API_ENDPOINT}/campaigns/${campId}`, {
+        return fetch(`${config.API_ENDPOINT}/user_notes/${campId}`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -92,8 +92,8 @@ const ApiService = {
                     )
 
     },
-    postCampaign(userId, newCampaign){
-        return fetch(`${config.API_ENDPOINT}/users/${userId}/campaigns`, {
+    postCampaign(newCampaign){
+        return fetch(`${config.API_ENDPOINT}/user_campaigns`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

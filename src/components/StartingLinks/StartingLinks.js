@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 
 export default function StartingLinks(props){
     return (
-        <div class='starting-links'>
+        <div className='starting-links'>
             <h2>Have you been here before?</h2>
             <Link to ='/register'>
                 <StartingButton className = 'new-user' buttonText='New User'/>

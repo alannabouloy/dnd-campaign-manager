@@ -7,16 +7,20 @@ import TagSection from '../../components/TagSection/TagSection'
 import StartingButton from '../../components/StartingButton/StartingButton'
 import AddButton from '../../components/AddButton/AddButton'
 import './NotePage.css'
+import UserContext from '../../context/UserContext'
 
 export default class NotePage extends Component {
     state = {
         note: null,
-        campaign: null,
     }
+    static contextType = UserContext
 
     componentDidMount() {
-       const path = this.props.match.params
-       console.log(path) 
+       const noteId = this.props.match.params
+       const notes = this.context.notes
+        console.log(notes)
+       const note = notes.filter(note => note.id === noteId)
+       console.log(note)
     }
 
     render(){

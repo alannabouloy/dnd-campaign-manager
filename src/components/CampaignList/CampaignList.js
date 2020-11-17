@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
-import ApiContext from '../../context/ApiContext'
+import UserContext from '../../context/UserContext'
 import CampaignTab from '../CampaignTab/CampaignTab'
 import './CampaignList.css'
 
 export default class CampaignList extends Component{
-    static contextType = ApiContext
+    static contextType = UserContext
 
     render(){
         let list = this.context.campaigns
 
-        list = list.map(camp => {
+        list = list && list.map(camp => {
             return (
                 <CampaignTab campaign={camp} key={camp.id}/>
             )
