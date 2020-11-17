@@ -14,9 +14,9 @@ export default function TagSection(props){
         }
     ]
 
-    list = list.map(tag => {
+    list = list.map((tag, i) => {
         return (
-           <Tag tag={tag}/>
+           <Tag key={i} tag={tag}/>
         )
     })
 
