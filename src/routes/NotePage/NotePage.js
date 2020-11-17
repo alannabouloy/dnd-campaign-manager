@@ -6,29 +6,44 @@ import ContentBlock from '../../components/ContentBlock/ContentBlock'
 import TagSection from '../../components/TagSection/TagSection'
 import StartingButton from '../../components/StartingButton/StartingButton'
 import AddButton from '../../components/AddButton/AddButton'
+import ApiService from '../../services/api-service'
 import './NotePage.css'
 import UserContext from '../../context/UserContext'
 
 export default class NotePage extends Component {
     state = {
-        note: null,
+        note: '',
+        campaign: 0
     }
     static contextType = UserContext
 
     componentDidMount() {
-       const noteId = this.props.match.params
+       const noteId = parseInt(this.props.match.params.note_id)
        const notes = this.context.notes
-        console.log(notes)
-       const note = notes.filter(note => note.id === noteId)
-       console.log(note)
+       let note = {}
+       for(let i = 0; i < notes.length; i++){
+           if(notes[i].id === noteId){
+               note = notes[i]
+               break
+           }
+       }
+
+       this.setState({note})
+       ApiService.getCampaign(note.campaign)
+        .then(campaign => {
+            this.setState({campaign})
+        })
     }
 
     render(){
+        const note = this.state && this.state.note
+        const campaign = this.state && this.state.campaign
+        console.log(note)
         return (
             <div className='note-page'>
-                <Header className='note-head' heading='My Tragic Backstory' subheading='myusername'/>
-                <SectionTitle className='camp-name' text='Campaign: Mighty Nein'/>
-                <ContentBlock className='note-content'/>
+                <Header className='note-head' heading={note.note_title} subheading='myusername'/>
+                <SectionTitle className='camp-name' text={`Campaign: ${campaign.campaign_name}`}/>
+                <ContentBlock className='note-content' content ={note.note_content} modified = {note.modified}/>
                 <TagSection/>
                 <AddButton buttonText='Add Tag'/>
                 <div className='nav-buttons'>
