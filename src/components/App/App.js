@@ -74,21 +74,21 @@ class App extends Component {
           <Route exact path = '/login' 
             render = {({history}) => {
               return <LoginPage
-                onClickSubmit = {() => history.push(`/${value.username}/dash`)}
+                onClickSubmit = {() => history.push(`/${this.state.user.username}/dash`)}
                 />
             }}
           />
           <Route exact path = '/register' 
             render = {({history}) => {
               return <RegistrationPage
-                onClickSubmit = {() => history.push(`/${value.username}/dash`)}
+                onClickSubmit = {() => history.push(`/${this.state.user.username}/dash`)}
               />
             }}
           />
           <Route exact path = '/:user_name/dash' 
             render = {({history}) => {
               return <Dashboard
-                onClick = {() => history.push(`/campaigns/${value.username}/create-campaign`)}
+                onClick = {() => history.push(`/campaigns/${this.state.user.username}/create-campaign`)}
               />
             }}
           />
@@ -96,7 +96,7 @@ class App extends Component {
              render = {({history}) => {
                return <CampaignPage
                 location = {history.location}
-                onClick = {() => history.push(`/notes/${value.username}/create-note`)}
+                onClick = {(campId) => history.push(`/notes/${this.state.user.username}/${campId}/create-note`)}
               />
              }}
             />
@@ -108,9 +108,10 @@ class App extends Component {
             }}
           />
           <Route exact path = '/notes/:note_id' component = {NotePage}/>
-          <Route exact path = '/notes/:user_name/create-note'
+          <Route exact path = '/notes/:user_name/:campaign_id/create-note'
            render = {({history}) => {
              return <NoteFormPage
+              location = {history.location}
               onClickSubmit = {() => history.goBack()}
               />
            }}

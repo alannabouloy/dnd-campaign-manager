@@ -9,7 +9,8 @@ export default class CampaignPage extends Component {
 
 
     handleAddButton = e => {
-        this.props.onClick()
+        const campId = this.props.location.pathname.split('/')[2]
+        this.props.onClick(campId)
     }
     
     render(){

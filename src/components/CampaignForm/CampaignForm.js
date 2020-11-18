@@ -39,7 +39,7 @@ export default class CampaignForm extends Component{
         }
         const keys = Object.keys(this.state)
         for(let i = 0; i < keys.length; i++){
-            if(this.state[keys[i].error]){
+            if(this.state[keys[i]].error){
                 return
             }
         }
@@ -98,12 +98,8 @@ export default class CampaignForm extends Component{
         this.setState({
             privateGame: {value: !!setting}
         })
-        console.log('privacy setting: ', this.state.privateGame.value)
     }
 
-    checkPrivacySetting = value => {
-        return this.state.privateGame.value === value
-    }
 
 
 
@@ -126,7 +122,7 @@ export default class CampaignForm extends Component{
                         {this.state.description.touched && <ValidationError message={descriptionErrorMessage}/>}
                     </div>
                     <div>
-                        <RadioButton name='privacy-set' checkSetting={this.checkPrivacySetting} onChange={this.changePrivacySetting} value1={true} value2={false}/>
+                        <RadioButton checkSetting={this.checkPrivacySetting} onChange={this.changePrivacySetting}/>
                     </div>
                     <div>
                         <ValidationError message = {this.state.errorMessage}/>
