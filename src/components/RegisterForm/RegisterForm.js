@@ -56,7 +56,7 @@ export default class RegisterForm extends Component{
                 })
                 return
             }
-            if(this.state[keys[i]].errors){
+            if(this.state[keys[i]].error){
                 return
             }
         }
