@@ -52,8 +52,8 @@ export default class LoginForm extends Component{
         return (
             <div>
                <form id='login-form' onSubmit= {e => this.handleFormSubmit(e)}>
-                <TextFormField formId = 'username' label='Username: ' placeholder='enter username here' onChange={this.updateUsername} required ={true}/>
-                <TextFormField formId='password' label='Password: ' onChange={this.updatePassword} required={true}/>
+                <TextFormField formId = 'username' label='Username: ' type='text' placeholder='enter username here' onChange={this.updateUsername} required ={true}/>
+                <TextFormField formId='password' label='Password: ' type='password' onChange={this.updatePassword} required={true}/>
                 <SubmitButton buttonText='Login'/>
                </form>
             </div>

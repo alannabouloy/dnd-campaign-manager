@@ -111,7 +111,7 @@ export default class CampaignForm extends Component{
             <div>
                 <form id='add-campaign-form' onSubmit = {e => this.handleFormSubmit(e)}>
                     <div>
-                        <TextFormField formId='camp-name' label='Enter your campaign name: ' placeholder='My Campaign' onChange={this.updateCampaignName} required={true}/>
+                        <TextFormField type='text' formId='camp-name' label='Enter your campaign name: ' placeholder='My Campaign' onChange={this.updateCampaignName} required={true}/>
                         {this.state.campaignName.touched && <ValidationError message={campaignNameErrorMessage}/>}
                     </div>
                     <div>

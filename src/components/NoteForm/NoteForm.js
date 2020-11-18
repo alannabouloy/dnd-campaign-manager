@@ -103,7 +103,7 @@ export default class NoteForm extends Component{
             <div>
                 <form id='add-note-form' onSubmit = {e => this.handleFormSubmit(e)}>
                     <div>
-                        <TextFormField formId='note-name' label='Note Title: ' placeholder='In the Caverns' onChange = {this.updateNoteTitle}required={true}/>
+                        <TextFormField type='text' formId='note-name' label='Note Title: ' placeholder='In the Caverns' onChange = {this.updateNoteTitle}required={true}/>
                         {this.state.noteTitle.touched && <ValidationError message = {noteTitleErrorMessage}/>}
                     </div>
                     <div>
@@ -115,7 +115,7 @@ export default class NoteForm extends Component{
                     </div>
                     <div>
                         <TagSection/>
-                        <TextFormField formId='new-tags' label='Add a tag: ' placeholder='dungeon crawl'/>
+                        <TextFormField type='text' formId='new-tags' label='Add a tag: ' placeholder='dungeon crawl'/>
                         <AddButton buttonText='Add Tag'/>
                     </div>
                     <div>

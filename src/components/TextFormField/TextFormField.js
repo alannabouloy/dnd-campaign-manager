@@ -7,7 +7,7 @@ export default function TextFormField(props){
                 <label htmlFor={props.formId}>
                     {props.label}
                 </label>
-                <input type='text' id={props.formId} placeholder={props.placeholder} onChange = {e => props.onChange(e.target.value)} required/>
+                <input type={props.type} id={props.formId} placeholder={props.placeholder} onChange = {e => props.onChange(e.target.value)} required/>
             </div>
         )
     }else {
@@ -16,7 +16,7 @@ export default function TextFormField(props){
                 <label htmlFor={props.formId}>
                     {props.label}
                 </label>
-                <input type='text' id={props.formId} placeholder={props.placeholder} onChange = {e => props.onChange(e.target.value)}/>
+                <input type={props.type} id={props.formId} placeholder={props.placeholder} onChange = {e => props.onChange(e.target.value)}/>
             </div>
         )
     }

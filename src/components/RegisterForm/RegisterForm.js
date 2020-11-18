@@ -159,23 +159,23 @@ export default class RegisterForm extends Component{
             <div>
                 <form id='register-form' onSubmit = {e => this.handleFormSubmit(e)}>
                     <div>
-                        <TextFormField formId='username' label='Choose a username: ' placeholder='username' onChange={this.updateUsername} required={true}/>
+                        <TextFormField type='text' formId='username' label='Choose a username: ' placeholder='username' onChange={this.updateUsername} required={true}/>
                         {this.state.username.touched && <ValidationError message = {usernameErrorMessage}/>}
                     </div>
                     <div>
-                        <TextFormField formId='password' label='Choose a password: ' placeholder='password' onChange={this.updatePassword} required={true}/>
+                        <TextFormField type='password' formId='password' label='Choose a password: ' placeholder='password' onChange={this.updatePassword} required={true}/>
                         {this.state.password.touched && <ValidationError message = {passwordErrorMessage}/>}
                     </div>
                     <div>
-                        <TextFormField formId='firstname' label='First Name: ' placeholder='Beauregard' onChange={this.updateFirstName} required={true}/>
+                        <TextFormField type='text' formId='firstname' label='First Name: ' placeholder='Beauregard' onChange={this.updateFirstName} required={true}/>
                         {this.state.firstName.touched && <ValidationError message = {firstNameErrorMessage}/>}
                     </div>
                     <div>
-                        <TextFormField formId='lastname' label='Last Name: ' placeholder='Lionett' onChange={this.updateLastName} required={true}/>
+                        <TextFormField type='text' formId='lastname' label='Last Name: ' placeholder='Lionett' onChange={this.updateLastName} required={true}/>
                         {this.state.lastName.touched && <ValidationError message = {lastNameErrorMessage}/>}
                     </div>
                     <div>
-                        <TextFormField formId='email' label='Email: ' placeholder='blionett@cobaltsoul.com' onChange={this.updateEmail} required={true}/>
+                        <TextFormField type='text' formId='email' label='Email: ' placeholder='blionett@cobaltsoul.com' onChange={this.updateEmail} required={true}/>
                         {this.state.email.touched && <ValidationError message = {emailErrorMessage}/>}
                     </div>
                     <div>
