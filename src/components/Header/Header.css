@@ -6,6 +6,14 @@ h1 {
     font-size: 30px;
 }
 
+.hidden{
+  display: none;
+}
+
+header a {
+  text-decoration: none;
+}
+
 header p {
   font-size: 14px;
 }

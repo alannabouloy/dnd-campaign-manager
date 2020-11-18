@@ -4,6 +4,8 @@ export default React.createContext({
     user: {},
     campaigns : [],
     notes: [],
+    logOut: '',
+    loggingOut: () => {},
     addUser: () => {},
     login: () => {},
     campaignClick: () => {},

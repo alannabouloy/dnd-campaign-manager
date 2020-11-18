@@ -11,6 +11,7 @@ import { Route } from 'react-router-dom';
 import { Component } from 'react';
 import UserContext from '../../context/UserContext'
 import ApiService from '../../services/api-service';
+import TokenService from '../../services/token-service';
 
 
 class App extends Component {
@@ -24,18 +25,25 @@ class App extends Component {
         },
         campaigns: [],
         notes: [],
+        logOut : 'hidden'
   }
 
-  handleAddUser = newUser => {
-    console.log('user added')
+  componentDidMount(){
+    if(TokenService.hasAuthToken()){
+      this.setState({logOut: ''})
+    }else {
+      this.setState({logOut: 'hidden'})
+    }
   }
 
   handleLogin = (username) => {
     this.setState({username})
     return ApiService.getUser(username)
         .then(user => {
-          this.setState({user})
-      
+          if(user){
+            this.setState({user})
+            this.setState({logOut: ''})
+          } 
         })
   }
   renderCampaigns = username => {
@@ -54,6 +62,11 @@ class App extends Component {
             this.setState({notes})
         })
 }
+handleLogOut = () => {
+  TokenService.clearAuthToken()
+  this.setState({username: ''})
+  this.setState({logOut: 'hidden'})
+}
 
   render(){
 
@@ -61,7 +74,8 @@ class App extends Component {
       user: this.state.user,
       campaigns: this.state.campaigns,
       notes: this.state.notes,
-      addUser: this.handleAddUser,
+      logOut: this.state.logOut,
+      loggingOut: this.handleLogOut,
       login: this.handleLogin,
       campaignClick: this.handleCampaignClick,
       renderCampaigns: this.renderCampaigns

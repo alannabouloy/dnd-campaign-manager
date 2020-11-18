@@ -4,6 +4,7 @@ import TextFormField from '../TextFormField/TextFormField';
 import SubmitButton from '../SubmitButton/SubmitButton';
 import UserContext from '../../context/UserContext';
 import TokenService from '../../services/token-service'
+import ValidationError from '../ValidationError/ValidationError';
 
 export default class LoginForm extends Component{
     state = {
@@ -17,7 +18,8 @@ export default class LoginForm extends Component{
         },
 
         hasUsernameError: false,
-        hasPasswordError: false
+        hasPasswordError: false,
+        errorMessage: ''
     }
 
     static contextType = UserContext;
@@ -26,14 +28,12 @@ export default class LoginForm extends Component{
         this.setState({
             username: {value: username, touched: true}
         })
-        console.log('username: ', this.state.username.value)
     }
 
     updatePassword = password =>{
         this.setState({
             password: {value: password, touched: true}
         })
-        console.log('password: ', this.state.password.value)
     }
 
     handleFormSubmit = e => {
@@ -44,7 +44,12 @@ export default class LoginForm extends Component{
         TokenService.saveAuthToken(userCredentials)
         this.context.login(username)
             .then(() => {
-                this.props.onClickSubmit()
+                    this.props.onClickSubmit()
+                
+            })
+            .catch(e => {
+                this.setState({errorMessage: `The username or password you entered was incorrect. Please try again.`})
+                TokenService.clearAuthToken()
             })
     }
 
@@ -54,6 +59,7 @@ export default class LoginForm extends Component{
                <form id='login-form' onSubmit= {e => this.handleFormSubmit(e)}>
                 <TextFormField formId = 'username' label='Username: ' type='text' placeholder='enter username here' onChange={this.updateUsername} required ={true}/>
                 <TextFormField formId='password' label='Password: ' type='password' onChange={this.updatePassword} required={true}/>
+                <ValidationError message={this.state.errorMessage}/>
                 <SubmitButton buttonText='Login'/>
                </form>
             </div>
