@@ -12,6 +12,7 @@ import { Component } from 'react';
 import UserContext from '../../context/UserContext'
 import ApiService from '../../services/api-service';
 import TokenService from '../../services/token-service';
+import AuthApiService from '../../services/auth-api-service';
 
 
 class App extends Component {
@@ -36,15 +37,15 @@ class App extends Component {
     }
   }
 
-  handleLogin = (username) => {
-    this.setState({username})
-    return ApiService.getUser(username)
-        .then(user => {
-          if(user){
-            this.setState({user})
-            this.setState({logOut: ''})
-          } 
-        })
+  handleLogin = (username, password) => {
+    return AuthApiService.postLogin({
+      username,
+      user_password: password
+    })
+     .then(res => {
+        console.log('response: ', res)
+        TokenService.saveAuthToken(res.authToken, username)
+    })
   }
   renderCampaigns = username => {
     ApiService.getCampaignsByUser(username)
@@ -95,7 +96,7 @@ handleLogOut = () => {
           <Route exact path = '/register' 
             render = {({history}) => {
               return <RegistrationPage
-                onClickSubmit = {() => history.push(`/${this.state.user.username}/dash`)}
+                onClickSubmit = {() => history.push(`/${TokenService.getUsername()}/dash`)}
               />
             }}
           />

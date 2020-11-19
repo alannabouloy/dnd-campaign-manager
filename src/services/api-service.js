@@ -5,7 +5,7 @@ const ApiService = {
     getUsers(){
         return fetch(`${config.API_ENDPOINT}/users`, {
             headers: {
-                'authorization' : `basics:${TokenService.getAuthToken()},`
+                'authorization' : `bearer ${TokenService.getAuthToken()},`
             },
         })
         .then(res =>  
@@ -33,7 +33,7 @@ const ApiService = {
     getUser(username){
         return fetch(`${config.API_ENDPOINT}/users/${username}`, {
             headers: {
-                'authorization': `basic:${TokenService.getAuthToken()}`,
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
             },
         })
             .then(res =>  
@@ -46,7 +46,7 @@ const ApiService = {
     getCampaignsByUser(){
         return fetch(`${config.API_ENDPOINT}/user_campaigns`, {
             headers: {
-                'authorization': `basic${TokenService.getAuthToken()}`,
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
             },
         })
             .then(res => 
@@ -59,7 +59,7 @@ const ApiService = {
     getCampaign(campId){
         return fetch(`${config.API_ENDPOINT}/user_campaigns/${campId}`, {
             headers: {
-                'authorization': `basic${TokenService.getAuthToken()}`,
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
             },
         })
             .then(res => 
@@ -73,7 +73,7 @@ const ApiService = {
     getCampaignNotes(campId){
         return fetch(`${config.API_ENDPOINT}/user_notes/${campId}`, {
             headers: {
-                'authorization': `basic${TokenService.getAuthToken()}`,
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
             },
         })
             .then(res => 
@@ -86,7 +86,7 @@ const ApiService = {
     getNote(campId, noteId){
         return fetch(`${config.API_ENDPOINT}/user_notes/${campId}/${noteId}`, {
             headers: {
-                'authorization': `basic${TokenService.getAuthToken()}`,
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
             },
         })
             .then(res => 
@@ -102,7 +102,7 @@ const ApiService = {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
-                'authorization': `basic${TokenService.getAuthToken()}`,
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
             },
             body: JSON.stringify(newNote),
         })
@@ -119,7 +119,7 @@ const ApiService = {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
-                'authorization': `basic${TokenService.getAuthToken()}`,
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
             },
             body: JSON.stringify(newCampaign),
         })

@@ -40,15 +40,14 @@ export default class LoginForm extends Component{
         e.preventDefault()
         const username = this.state.username.value
         const password = this.state.password.value
-        const userCredentials = TokenService.makeBasicAuthToken(username, password)
-        TokenService.saveAuthToken(userCredentials)
-        this.context.login(username)
+        this.context.login(username, password)
             .then(() => {
-                    this.props.onClickSubmit()
+                    //this.props.onClickSubmit()
                 
             })
             .catch(e => {
                 this.setState({errorMessage: `The username or password you entered was incorrect. Please try again.`})
+                console.log('error occurred:' , e)
                 TokenService.clearAuthToken()
             })
     }
