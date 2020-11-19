@@ -20,9 +20,6 @@ class App extends Component {
   state = {
         user: {
           username: '',
-          first_name: '',
-          last_name: '',
-          email: ''
         },
         campaigns: [],
         notes: [],
@@ -32,6 +29,8 @@ class App extends Component {
   componentDidMount(){
     if(TokenService.hasAuthToken()){
       this.setState({logOut: ''})
+      const username = TokenService.getUsername()
+      this.setState({username})
     }else {
       this.setState({logOut: 'hidden'})
     }
@@ -43,8 +42,11 @@ class App extends Component {
       user_password: password
     })
      .then(res => {
-        console.log('response: ', res)
         TokenService.saveAuthToken(res.authToken, username)
+    })
+    .then(() => {
+      const username = TokenService.getUsername()
+      this.setState({username})
     })
   }
   renderCampaigns = username => {
@@ -80,7 +82,7 @@ handleLogOut = () => {
       login: this.handleLogin,
       campaignClick: this.handleCampaignClick,
       renderCampaigns: this.renderCampaigns
-    } 
+    }
 
     return (
       <UserContext.Provider value = {value}>
@@ -89,18 +91,18 @@ handleLogOut = () => {
           <Route exact path = '/login' 
             render = {({history}) => {
               return <LoginPage
-                onClickSubmit = {() => history.push(`/${this.state.user.username}/dash`)}
+                onClickSubmit = {() => history.push(`/dash`)}
                 />
             }}
           />
           <Route exact path = '/register' 
             render = {({history}) => {
               return <RegistrationPage
-                onClickSubmit = {() => history.push(`/${TokenService.getUsername()}/dash`)}
+                onClickSubmit = {() => history.push(`/dash`)}
               />
             }}
           />
-          <Route exact path = '/:user_name/dash' 
+          <Route exact path = '/dash' 
             render = {({history}) => {
               return <Dashboard
                 onClick = {() => history.push(`/campaigns/${this.state.user.username}/create-campaign`)}

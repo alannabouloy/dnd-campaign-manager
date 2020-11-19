@@ -30,7 +30,8 @@ const ApiService = {
                 )
     },
 
-    getUser(username){
+    getUser(){
+        const username = TokenService.getUsername()
         return fetch(`${config.API_ENDPOINT}/users/${username}`, {
             headers: {
                 'authorization': `bearer ${TokenService.getAuthToken()}`,

@@ -42,7 +42,7 @@ export default class LoginForm extends Component{
         const password = this.state.password.value
         this.context.login(username, password)
             .then(() => {
-                    //this.props.onClickSubmit()
+                    this.props.onClickSubmit()
                 
             })
             .catch(e => {
