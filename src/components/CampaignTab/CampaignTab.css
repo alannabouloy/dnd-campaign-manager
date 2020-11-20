@@ -1,14 +1,21 @@
-.campaign {
-    background-color: gray;
+.tab {
     flex: 1;
-    width: 75%;
-    margin: auto;
-    margin-top: 10px;
+    width: 75vw;
+    margin: 10px auto;
     padding: 10px;
     color: white;
     font-size: 10px;
+    background-color: #5e747f;
 }
 
-.campaign:hover{
-    background-color: darkgray;
+.tab:active, .tab:hover, .tab:focus {
+    border-bottom: #8b2635 solid 5px;
 }
+
+.tab h2 {
+    font-family: 'Josefin Slab', serif;
+    font-size: 20px;
+    padding: 0px;
+    margin: 0px;
+}
+

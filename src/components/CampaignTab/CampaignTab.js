@@ -18,7 +18,7 @@ export default class CampaignTab extends Component {
         return(
             <li onClick = {e => this.context.campaignClick(campaign.id)}>
                 <Link to={`/campaigns/${campaign.id}`}>
-                <div className='campaign'>
+                <div className='campaign tab'>
                     <h2>{campaign.campaignName}</h2>
                     <p>Players: {campaign.players}</p>
                     <p>Playing Since: {campaign.playingSince}</p>

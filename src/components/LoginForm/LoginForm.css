@@ -1,5 +1,18 @@
 
-.form-field {
+
+#login-form button {
+    width: 40vw;
+    font-size: 14px;
+    padding: 15px 10px;
+    border: solid #5e747f 3px;
+    background-color: #5e747f;
+    font-family: 'Josefin Slab', serif;
     color: white;
-    margin: 10px;
+}
+
+#login-form button:hover, 
+#login-form button:focus, 
+#login-form button:active {
+    background-color: #5e7489;
+    color: #12100e;
 }

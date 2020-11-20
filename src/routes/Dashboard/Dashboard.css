@@ -1,13 +1,11 @@
-* {
-    box-sizing: border-box;
-}
-
 .dash {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: gray;
+    padding: 15px;
     color: white;
+    border-top: solid #5e747f 10px;
+    border-bottom: solid #5e747f 10px;
 }
 
 .dash h1 {
@@ -17,7 +15,12 @@
 }
 
 .dash p {
-  font-size: 14px;
+  font-size: 18px;
   margin-top: 25px;
-  margin-right: 5px;;
+  margin-right: 5px;
+  font-family: 'Josefin Slab', serif;
+}
+
+.dash a:visited {
+    color: white;
 }

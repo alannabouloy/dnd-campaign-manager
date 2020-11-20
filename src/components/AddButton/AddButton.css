@@ -1,3 +1,12 @@
 .add-button {
     text-align: center;
+    
+}
+
+.add-button button {
+    background-color: #8B2635;
+    padding: 10px;
+    color: white;
+    font-family: 'Bilbo Swash Cap', cursive;
+    font-size: 20px;
 }

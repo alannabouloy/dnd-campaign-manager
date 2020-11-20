@@ -14,7 +14,7 @@ export default function NoteTab(props){
     return (
         <li>
             <Link to={`/notes/${note.id}`}>
-                <div className='note-tab'>
+                <div className='note-tab tab'>
                     <h2>{note.noteTitle}</h2>
                     <p>Last Modified: {note.modified}</p>
                     <p>Author: {note.author}</p>
