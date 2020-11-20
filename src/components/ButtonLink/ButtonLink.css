@@ -1,0 +1,18 @@
+.button  {
+    text-decoration: none;
+    margin: 10px auto 10px auto;
+    padding: 10px;
+    font-size: 14px;
+    color:#12100e;
+    width: 55vw;
+    border: solid #5e747f 5px;
+}
+
+.button:visited {
+    color:#12100e;
+}
+
+.button:hover, .button:active, .button:focus {
+    background-color: #5e747f;
+    color: white;
+}

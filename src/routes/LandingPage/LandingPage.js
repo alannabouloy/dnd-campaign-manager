@@ -7,7 +7,7 @@ export default class LandingPage extends Component {
     render(){
         return (
             <div className = 'landing-page'>
-                <Header className = 'main-header' heading='DnD Campaign Mangager' subheading='a place to keep track of all of your adventures'/>
+                <Header className = 'main-header' heading='Adventure Log' subheading='a place to keep track of all of your adventures'/>
                 <StartingLinks/>
             </div>
         )

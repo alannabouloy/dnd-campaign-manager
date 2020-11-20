@@ -4,7 +4,7 @@ import SectionTitle from '../../components/SectionTitle/SectionTitle'
 import Header from '../../components/Header/Header'
 import ContentBlock from '../../components/ContentBlock/ContentBlock'
 import TagSection from '../../components/TagSection/TagSection'
-import StartingButton from '../../components/StartingButton/StartingButton'
+import ButtonLink from '../../components/ButtonLink/ButtonLink'
 import AddButton from '../../components/AddButton/AddButton'
 import ApiService from '../../services/api-service'
 import './NotePage.css'
@@ -40,8 +40,8 @@ export default class NotePage extends Component {
                 <TagSection/>
                 <AddButton buttonText='Add Tag'/>
                 <div className='nav-buttons'>
-                    <StartingButton className='back-button' buttonText='Back to Notes'/>
-                    <StartingButton className='edit-button' buttonText='Edit Note'/>
+                    <ButtonLink className='back-button' buttonText='Back to Notes'/>
+                    <ButtonLink className='edit-button' buttonText='Edit Note'/>
                 </div>
             </div>
         )
