@@ -1,9 +1,22 @@
 .form {
-    background-color: gray;
+    color: #12100e ;
     display: flex;
     flex-direction: column;
     text-align: center;
     margin: 50px;
     padding: 20px;
     border-radius: 10px;
+}
+
+.form h2 {
+    font-family: 'Bilbo Swash Caps', cursive;
+    font-size: 30px;
+}
+
+#to-login {
+    width: 40vw;
+    font-size: 14px;
+    padding: 10px;
+    border: solid #5e747f 3px;
+    margin: 10px auto 10px auto;
 }

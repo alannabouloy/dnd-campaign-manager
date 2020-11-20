@@ -4,20 +4,17 @@ import RegisterForm from '../../components/RegisterForm/RegisterForm'
 import Header from '../../components/Header/Header'
 import './RegistrationPage.css'
 import ButtonLink from '../../components/ButtonLink/ButtonLink'
-import {Link} from 'react-router-dom'
 
 export default class RegistrationPage extends Component {
     
     render(){
         return (
             <div className='registration-page'>
-                <Header className='register' heading='DnD Campaign Manager' subheading='a place to keep track of all of your adventures'/>
+                <Header className='register' heading='Adventure Log'/>
                 <div className='form'>
                     <h2>Create a New Account</h2>
                     <RegisterForm onClickSubmit = {this.props.onClickSubmit}/>
-                    <Link to = '/login'>
-                        <ButtonLink className='returning' buttonText='I have an account'/>
-                    </Link>
+                    <ButtonLink id='to-login' buttonText='I have an account' linkTo='/login'/>
                 </div>
             </div>
         )
