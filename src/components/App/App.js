@@ -91,21 +91,21 @@ handleLogOut = () => {
           <Route exact path = '/login' 
             render = {({history}) => {
               return <LoginPage
-                onClickSubmit = {() => history.push(`/dash`)}
+                onClickSubmit = {() => history.push(`/${TokenService.getUsername()}/dash`)}
                 />
             }}
           />
           <Route exact path = '/register' 
             render = {({history}) => {
               return <RegistrationPage
-                onClickSubmit = {() => history.push(`/dash`)}
+                onClickSubmit = {() => history.push(`/${TokenService.getUsername()}/dash`)}
               />
             }}
           />
-          <Route exact path = '/dash' 
+          <Route exact path = '/:username/dash' 
             render = {({history}) => {
               return <Dashboard
-                onClick = {() => history.push(`/campaigns/${this.state.user.username}/create-campaign`)}
+                onClick = {() => history.push(`/campaigns/${TokenService.getUsername()}/create-campaign`)}
               />
             }}
           />
@@ -113,7 +113,7 @@ handleLogOut = () => {
              render = {({history}) => {
                return <CampaignPage
                 location = {history.location}
-                onClick = {(campId) => history.push(`/notes/${this.state.user.username}/${campId}/create-note`)}
+                onClick = {(campId) => history.push(`/notes/${TokenService.getUsername()}/${campId}/create-note`)}
               />
              }}
             />

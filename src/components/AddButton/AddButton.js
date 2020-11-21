@@ -4,7 +4,7 @@ import './AddButton.css'
 export default function AddButton(props){
     return (
         <div className='add-button'>
-            <button onClick = {e => props.onClick(e)}>
+            <button id={props.id} onClick = {e => props.onClick(e)}>
                 {props.buttonText}
             </button>
         </div>

@@ -34,14 +34,14 @@ export default class NotePage extends Component {
         const campaign = this.state && this.state.campaign
         return (
             <div className='note-page'>
-                <Header className='note-head' heading={note.note_title} subheading='myusername'/>
+                <Header className='dash' heading={note.note_title}/>
                 <SectionTitle className='camp-name' text={`Campaign: ${campaign.campaign_name}`}/>
                 <ContentBlock className='note-content' content ={note.note_content} modified = {note.modified}/>
-                <TagSection/>
-                <AddButton buttonText='Add Tag'/>
+                {/*<TagSection/>
+                <AddButton id = 'tag-button' buttonText='Add Tag'/>*/}
                 <div className='nav-buttons'>
-                    <ButtonLink className='back-button' buttonText='Back to Notes'/>
-                    <ButtonLink className='edit-button' buttonText='Edit Note'/>
+                    <ButtonLink linkTo={`/campaigns/${campaign.id}`} id='back-button' buttonText='Back to Notes'/>
+                    <ButtonLink linkTo={'#'} id='edit-button' buttonText='Edit Note'/>
                 </div>
             </div>
         )

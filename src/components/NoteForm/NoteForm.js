@@ -113,11 +113,11 @@ export default class NoteForm extends Component{
                     <div>
                         <RadioButton onChange={this.changePrivacySetting}/>
                     </div>
-                    <div>
+                    {/*<div>
                         <TagSection/>
                         <TextFormField type='text' formId='new-tags' label='Add a tag: ' placeholder='dungeon crawl'/>
                         <AddButton buttonText='Add Tag'/>
-                    </div>
+                    </div>*/}
                     <div>
                         <ValidationError message={this.state.errorMessage}/>
                     </div>
