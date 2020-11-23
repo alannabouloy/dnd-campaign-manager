@@ -50,7 +50,7 @@ class App extends Component {
     })
   }
   renderCampaigns = username => {
-    ApiService.getCampaignsByUser(username)
+    ApiService.getCampaignsByUser()
             .then(campaigns => {
                 this.setState({campaigns});
             })

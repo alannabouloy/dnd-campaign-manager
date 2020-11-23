@@ -1,7 +1,9 @@
 import React from 'react'
 import {Component} from 'react'
+import { Redirect } from 'react-router-dom'
 import Header from '../../components/Header/Header'
 import LoginForm from '../../components/LoginForm/LoginForm'
+
 import './LoginPage.css'
 
 export default class LoginPage extends Component {
