@@ -9,7 +9,7 @@ export default class NoteFormPage extends Component {
         return (
             <div className='note-form-page'>
                 <Header className='dash' heading='Mighty Nein' subheading='myusername'/>
-                <SectionTitle className='add-note-heading' text='Add a New Note'/>
+                <SectionTitle className='section-heading' text='Add a New Note'/>
                 <div className='form'>
                     <NoteForm location = {this.props.location} onClickSubmit = {this.props.onClickSubmit}/>
                 </div>

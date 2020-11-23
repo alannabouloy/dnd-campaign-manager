@@ -5,19 +5,20 @@
     padding:4px;
 }
 
-#register-form button {
-    width: 40vw;
-    font-size: 14px;
-    padding: 15px 10px;
-    border: solid #5e747f 3px;
-    background-color: transparent;
-    font-family: 'Josefin Slab', serif;
-    color: #12100e;
+.form-field input {
+    width: 50vw;
+    margin: 3px;
 }
 
-#register-form button:hover, 
-#register-form button:focus, 
-#register-form button:active {
-    background-color: #5e747f;
-    color: white;
+@media only all and (min-width: 700px){
+    .container {
+        width: 70vw;
+        clear: both;
+        margin: auto;
+    }
+
+    .container input {
+        width: 100%;
+        clear: both;
+    }
 }

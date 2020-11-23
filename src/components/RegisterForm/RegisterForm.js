@@ -156,7 +156,7 @@ export default class RegisterForm extends Component{
         
         
         return (
-            <div>
+            <div className='container'>
                 <form id='register-form' onSubmit = {e => this.handleFormSubmit(e)}>
                     <div>
                         <TextFormField type='text' formId='username' label='Choose a username: ' placeholder='username' onChange={this.updateUsername} required={true}/>

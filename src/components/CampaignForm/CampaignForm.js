@@ -6,6 +6,7 @@ import SubmitButton from '../SubmitButton/SubmitButton'
 import TextArea from '../TextArea/TextArea'
 import TextFormField from '../TextFormField/TextFormField'
 import ValidationError from '../ValidationError/ValidationError'
+import './CampaignForm.css'
 
 export default class CampaignForm extends Component{
 
@@ -108,7 +109,7 @@ export default class CampaignForm extends Component{
         const campaignNameErrorMessage = this.checkForError('campaignName')
         const descriptionErrorMessage = this.checkForError('description')
         return(
-            <div>
+            <div className='container'>
                 <form id='add-campaign-form' onSubmit = {e => this.handleFormSubmit(e)}>
                     <div>
                         <TextFormField type='text' formId='camp-name' label='Enter your campaign name: ' placeholder='My Campaign' onChange={this.updateCampaignName} required={true}/>

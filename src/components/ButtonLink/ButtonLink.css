@@ -1,19 +1,19 @@
 .button  {
     text-decoration: none;
+    background-color: #5e747f;
     margin: 10px auto 10px auto;
     padding: 10px;
     font-size: 14px;
-    color:#12100e;
+    color:white;
     width: 55vw;
-    border: solid #5e747f 5px;
     font-family: 'Josefin Slab', serif;
 }
 
 .button:visited {
-    color:#12100e;
+    color:white;
 }
 
 .button:hover, .button:active, .button:focus {
-    background-color: #5e747f;
+    background-color: #8B2635;
     color: white;
 }

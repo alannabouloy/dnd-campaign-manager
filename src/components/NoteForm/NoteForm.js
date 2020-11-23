@@ -7,6 +7,7 @@ import AddButton from '../AddButton/AddButton'
 import RadioButton from '../PrivacyButtons/PrivacyButtons'
 import ApiService from '../../services/api-service'
 import ValidationError from '../ValidationError/ValidationError'
+import './NoteForm.css'
 
 export default class NoteForm extends Component{
     state = {
@@ -100,14 +101,14 @@ export default class NoteForm extends Component{
         const noteContentErrorMessage = this.checkForError('noteContent')
         
         return (
-            <div>
+            <div className='container'>
                 <form id='add-note-form' onSubmit = {e => this.handleFormSubmit(e)}>
                     <div>
-                        <TextFormField type='text' formId='note-name' label='Note Title: ' placeholder='In the Caverns' onChange = {this.updateNoteTitle}required={true}/>
+                        <TextFormField type='text' formId='note-name' label='What is the title of this note?' placeholder='In the Caverns' onChange = {this.updateNoteTitle}required={true}/>
                         {this.state.noteTitle.touched && <ValidationError message = {noteTitleErrorMessage}/>}
                     </div>
                     <div>
-                        <TextArea formId='note-content' label='Note Content: ' className='content-box' onChange = {this.updateNoteContent} required={true}/>
+                        <TextArea formId='note-content' label='What would you like the note to say?' className='content-box' onChange = {this.updateNoteContent} required={true}/>
                         {this.state.noteContent.touched && <ValidationError message={noteContentErrorMessage}/>}
                     </div>
                     <div>

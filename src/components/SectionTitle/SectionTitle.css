@@ -1,6 +1,10 @@
-.camp-name {
+.camp-name, .section-heading {
     text-align: center;
     font-size: 15px;
-    font-family: 'Bilbo Swash Cap', cursive;
+    font-family: 'Bilbo Swash Caps', cursive;
     margin-top: 20px;
+}
+
+.section-heading{
+    font-size: 20px;
 }

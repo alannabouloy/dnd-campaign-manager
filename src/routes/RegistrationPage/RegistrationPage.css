@@ -20,3 +20,8 @@
     border: solid #5e747f 3px;
     margin: 10px auto 10px auto;
 }
+
+
+@media only all and (min-width: 700px){
+    
+}

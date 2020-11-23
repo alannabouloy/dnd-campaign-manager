@@ -1,16 +1,12 @@
-.add-button {
+.submit{
     text-align: center;
     
 }
 
-.add-button button {
+.submit button {
     background-color: #8B2635;
     padding: 10px;
     color: white;
     font-family:cursive;
     font-size: 20px;
-}
-
-#tag-button {
-    font-size: 15px;
 }

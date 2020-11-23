@@ -1,0 +1,9 @@
+#note-content {
+    width: 50vw;
+    height: 50vh;
+    margin: 5px;
+}
+
+#note-name {
+    width: 50vw;
+}
