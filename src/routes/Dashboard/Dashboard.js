@@ -9,10 +9,6 @@ import UserContext from '../../context/UserContext'
 export default class Dashboard extends Component{
     static contextType = UserContext
 
-    componentDidMount(){
-        this.context.renderCampaigns(this.context.user && this.context.user.username)
-    }
-
     handleAddButton = e => {
         this.props.onClick()
     }
