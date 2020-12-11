@@ -9,4 +9,5 @@ export default React.createContext({
     addUser: () => {},
     login: () => {},
     campaignClick: () => {},
+    getCampaigns: () => {},
 })

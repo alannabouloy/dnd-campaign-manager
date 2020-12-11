@@ -5,9 +5,16 @@ import CampaignList from '../../components/CampaignList/CampaignList'
 import Header from '../../components/Header/Header'
 import './Dashboard.css'
 import UserContext from '../../context/UserContext'
+import TokenService from '../../services/token-service'
 
 export default class Dashboard extends Component{
     static contextType = UserContext
+
+    componentDidMount(){
+        if(TokenService.hasAuthToken()){
+            this.context.getCampaigns()
+        }
+    }
 
     handleAddButton = e => {
         this.props.onClick()

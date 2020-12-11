@@ -29,8 +29,7 @@ class App extends Component {
   componentDidMount(){
     if(TokenService.hasAuthToken()){
       this.setState({logOut: ''})
-      const username = TokenService.getUsername()
-      this.setState({username})
+      this.getCampaigns()
     }else {
       this.setState({logOut: 'hidden'})
     }
@@ -49,7 +48,8 @@ class App extends Component {
       this.setState({username})
     })
   }
-  renderCampaigns = username => {
+
+  getCampaigns = () => {
     ApiService.getCampaignsByUser()
             .then(campaigns => {
                 this.setState({campaigns});
@@ -61,7 +61,6 @@ class App extends Component {
   handleCampaignClick = id => {
     ApiService.getCampaignNotes(id)
         .then(notes => {
-            console.log('got notes from api', notes)
             this.setState({notes})
         })
 }
@@ -81,7 +80,7 @@ handleLogOut = () => {
       loggingOut: this.handleLogOut,
       login: this.handleLogin,
       campaignClick: this.handleCampaignClick,
-      renderCampaigns: this.renderCampaigns
+      getCampaigns: this.getCampaigns,
     }
 
     return (
