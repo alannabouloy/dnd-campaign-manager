@@ -55,20 +55,31 @@ class App extends Component {
                 this.setState({campaigns});
             })
             .catch(error => {
-                console.log({error});
+                return error
             })
   }
+
+  getNotes = campId => {
+    ApiService.getCampaignNotes(campId)
+      .then(notes => {
+        this.setState({notes});
+      })
+      .catch(error => {
+        return error
+      })
+  }
+
   handleCampaignClick = id => {
     ApiService.getCampaignNotes(id)
         .then(notes => {
             this.setState({notes})
         })
-}
-handleLogOut = () => {
-  TokenService.clearAuthToken()
-  this.setState({username: ''})
-  this.setState({logOut: 'hidden'})
-}
+  }
+  handleLogOut = () => {
+    TokenService.clearAuthToken()
+    this.setState({username: ''})
+    this.setState({logOut: 'hidden'})
+  }
 
   render(){
 
@@ -81,6 +92,7 @@ handleLogOut = () => {
       login: this.handleLogin,
       campaignClick: this.handleCampaignClick,
       getCampaigns: this.getCampaigns,
+      getNotes: this.getNotes
     }
 
     return (

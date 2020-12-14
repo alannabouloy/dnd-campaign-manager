@@ -1,4 +1,19 @@
 .new-user, .returning {
-    font-family: 'Josefin Slab', cursive;
+    font-family: 'Josefin Slab', serif;
     font-size: 20px;
+}
+
+.welcome {
+    font-family: 'Bilbo Swash Caps', cursive;
+    text-align: center;
+    font-size: 35px;
+}
+
+.intro {
+    width: 35vw;
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 0px;
+    font-family: 'Josefin Slab', serif;
+    line-height: 1.2;
 }

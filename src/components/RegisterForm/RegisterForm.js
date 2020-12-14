@@ -67,15 +67,19 @@ export default class RegisterForm extends Component{
             last_name: this.state.lastName.value,
             email: this.state.email.value
         }
-
+        console.log('New user: ', newUser)
         ApiService.postUser(newUser)
             .then(user => {
-                TokenService.saveAuthToken(TokenService.makeBasicAuthToken(user.username, user.user_password))
-                this.context.login(user.username)
-                .catch(e => this.setState({errorMessage: e}))
+                console.log('returned user: ', user)
+                this.context.login(user.username, newUser.user_password)
+                    .then(() => {
+                        if(TokenService.hasAuthToken()){
+                            this.props.onClickSubmit()
+                        } 
+                    })
+                    .catch(e => this.setState({errorMessage: e}))
             })
-            .then(() => this.props.onClickSubmit())
-            .catch(e => this.setState({errorMessage: e}))
+             .catch(e => this.setState({errorMessage: e}))
     }
 
     checkForError = (key) => {

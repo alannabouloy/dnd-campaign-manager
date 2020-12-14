@@ -10,7 +10,7 @@ export default class LoginPage extends Component {
     render(){
         return (
             <div className='login-page'>
-                <Header className = 'login' heading='Adventure Log'/>
+                <Header className = 'login' heading='Scribe'/>
                 <div className='form'>
                     <h2>Log In</h2>
                     <LoginForm onClickSubmit = {this.props.onClickSubmit} />

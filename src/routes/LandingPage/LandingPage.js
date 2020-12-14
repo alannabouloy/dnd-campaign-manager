@@ -23,7 +23,15 @@ export default class LandingPage extends Component {
     render(){
         return (
             <div className = 'landing-page'>
-                <Header className = 'main-header' heading='Adventure Log'/>
+                <Header className = 'main-header' heading='Scribe'/>
+                <h2 className='welcome'>Welcome to Scribe!</h2>
+                <div className='intro'>
+                    <p>
+                        Scribe is a handy tool you can use to keep track of all of your RPG related notes.
+                        To get started, simply register for an account and add your first campaign! Already have an account?
+                        Then go ahead and login and let the adventuring begin!
+                    </p>
+                </div>
                 <StartingLinks onClick = {this.context.demoLogin}/>
             </div>
         )

@@ -10,4 +10,5 @@ export default React.createContext({
     login: () => {},
     campaignClick: () => {},
     getCampaigns: () => {},
+    getNotes: () => {},
 })

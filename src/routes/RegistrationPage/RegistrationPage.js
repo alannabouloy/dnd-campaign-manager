@@ -10,7 +10,7 @@ export default class RegistrationPage extends Component {
     render(){
         return (
             <div className='registration-page'>
-                <Header className='register' heading='Adventure Log'/>
+                <Header className='register' heading='Scribe'/>
                 <div className='form'>
                     <h2>Create a New Account</h2>
                     <RegisterForm onClickSubmit = {this.props.onClickSubmit}/>
