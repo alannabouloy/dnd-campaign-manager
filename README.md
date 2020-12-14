@@ -2,81 +2,38 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-I made this boilerplate for my own perseonal use when building React apps but it's available for anyone who wants to use it. 
+Click below to visit the live application!
 
-It includes the basic react set-up plus a Router
+[Scribe Campaign Manager](https://scribe-campaign-manager.vercel.app/)
 
-Steps on how to get started:
+Scibe is an RPG Note Tracker App designed to help you keep track of your current campaigns and provide easy access to session notes. 
 
-1. Clone this repositiory to your local machine `git clone BOILERPLATE-URL NEW-PROJECT-NAME`
-2. `cd` into the cloned repository
-3. Make a fresh start of git history with `rm -rf .git && git init`
-4. Install the node dependencies `npm i`
-5. Edit the contents of the `package.json` to use NEW-PROJECT-NAME instead of `"name": "react-boilerplate"`,
+It includes a dashboard where you can view all of your active campaigns.
 
-## Available Scripts
+![Dashboard](/images/campaigndash.png)
 
-In the project directory, you can run:
+As well as individual Campaign Dashboards where you can see all of your notes for that current campaign.
 
-### `npm start`
+![Campaign Page](/images/campaignpage.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+You can click on the Note Tabs to access a detailed view of each note.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+![Notes Page](/images/notedetails.png)
 
-### `npm test`
+And you can add new notes with just the click of a button.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Note Form](/images/addnote.png)
 
-### `npm run build`
+You can click on the Demo account to get an idea of how the app works and create your own personal account by selecting New User on the app's landing page.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Langing Page](/images/landingpage.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Upcoming Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Tag System - You'll soon have the ability to add tags to notes and use tags to more easily filter through old notes. 
 
-### `npm run eject`
+2. Add NPCs to Campaigns - You'll be able to add the NPCs you've met to your campaign's page, with options to specify where you met them, current relationship, and more.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+3. Joint Campaigns - Soon you'll be able to add multiple players to one campaign, allowing your entire party to access your notes and add their own to the campaign. 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+4. Public and Private Campaigns - You'll have the option to share your campaign with the world or keep it private. 
