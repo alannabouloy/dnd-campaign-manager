@@ -47,7 +47,6 @@ export default class LoginForm extends Component{
             })
             .catch(e => {
                 this.setState({errorMessage: `The username or password you entered was incorrect. Please try again.`})
-                console.log('error occurred:' , e)
                 TokenService.clearAuthToken()
             })
     }

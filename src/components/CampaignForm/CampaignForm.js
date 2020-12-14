@@ -53,7 +53,6 @@ export default class CampaignForm extends Component{
 
         ApiService.postCampaign(newCampaign)
             .then((res) => {
-                console.log(res)
                 this.props.onClickSubmit()
             })
             .catch(e =>  this.setState({errorMessage: e}))

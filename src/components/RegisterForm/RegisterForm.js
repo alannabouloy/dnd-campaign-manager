@@ -67,10 +67,8 @@ export default class RegisterForm extends Component{
             last_name: this.state.lastName.value,
             email: this.state.email.value
         }
-        console.log('New user: ', newUser)
         ApiService.postUser(newUser)
             .then(user => {
-                console.log('returned user: ', user)
                 this.context.login(user.username, newUser.user_password)
                     .then(() => {
                         if(TokenService.hasAuthToken()){
