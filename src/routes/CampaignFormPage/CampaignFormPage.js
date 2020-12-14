@@ -9,7 +9,7 @@ export default class CampaignFormPage extends Component {
     render(){
         return (
             <div className='campaign-form-page'>
-                <Header className='dash' heading='My Campaigns' subheading='myusername'/>
+                <Header className='dash' heading='My Campaigns'/>
                 <SectionTitle className='section-heading' text='Add Your Campaign'/>
                 <div className='form'>
                     <CampaignForm onClickSubmit = {this.props.onClickSubmit}/>

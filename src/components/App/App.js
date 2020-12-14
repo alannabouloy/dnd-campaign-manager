@@ -46,6 +46,7 @@ class App extends Component {
     .then(() => {
       const username = TokenService.getUsername()
       this.setState({username})
+      this.getCampaigns()
     })
   }
 
