@@ -6,6 +6,8 @@ Click below to visit the live application!
 
 [Scribe Campaign Manager](https://scribe-campaign-manager.vercel.app/)
 
+You can find the repository for the API [here](https://github.com/alannabouloy/dnd-cm-server)
+
 Scibe is an RPG Note Tracker App designed to help you keep track of your current campaigns and provide easy access to session notes. 
 
 It includes a dashboard where you can view all of your active campaigns.
